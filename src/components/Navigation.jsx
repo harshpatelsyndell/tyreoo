@@ -35,7 +35,7 @@ export default function Navigation({
   toggleSidebar,
 }) {
   return (
-    <div className="sticky top-0 p-5 flex justify-start items-center bg-red z-40">
+    <div className="font-gotham sticky top-0 p-5 flex justify-start items-center bg-red z-40">
       {menubtn ? (
         <img
           className="w-5 md:hidden"
@@ -51,7 +51,7 @@ export default function Navigation({
           <img src={Logo} alt="logo" />
         </Link>
       ) : (
-        <Link className="md:hidden mx-5" to="/">
+        <Link className=" w-[30%] md:hidden mx-5" to="/">
           <img src={Logo} alt="logo" />
         </Link>
       )}
