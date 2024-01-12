@@ -1,8 +1,10 @@
 import Logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 // import mycard from "../assets/mycard.png";
-// import dashboard from "../assets/dashboard.png";
+import dashboard from "../assets/dashboard.svg";
+import { useState } from "react";
+import OpenSubList from "./OpenSubList";
 // import analytics from "../assets/analytics.png";
 // import user from "../assets/user.png";
 // import academy from "../assets/academy.png";
@@ -20,87 +22,113 @@ Sidebar.propTypes = {
 };
 
 // const icons = {
-//   dashboard,
-//   analytics,
-//   user,
-//   academy,
-//   cellphone,
-//   shop,
-//   tutorial,
-//   company,
-//   template,
-//   settings,
-//   acountbilling,
+//   // dashboard,
+//   // analytics,
+//   // user,
+//   // academy,
+//   // cellphone,
+//   // shop,
+//   // tutorial,
+//   // company,
+//   // template,
+//   // settings,
+//   // acountbilling,
 // };
 
 const sidebar = [
   {
-    name: "[Company Name]",
+    name: "Dashboard",
+    path: "main",
+  },
+  {
+    name: "Vehicle Management",
     lists: [
       {
-        name: "Dashboard",
-        icon: "dashboard",
+        name: "Vehicle List",
+        icon: "vehicleList",
+        path: "vehiclelist",
       },
       {
-        name: "Analytics",
-        icon: "analytics",
+        name: "Vehicle Assignment",
+        icon: "vehicleAssignment",
+        path: "vehicleassignment",
       },
       {
-        name: "Users",
-        icon: "user",
-      },
-      {
-        name: "Academy",
-        icon: "academy",
-      },
-      {
-        name: "Smart Accessories",
-        icon: "cellphone",
-      },
-      {
-        name: "Shop Smart Accessories",
-        icon: "shop",
-      },
-      {
-        name: "Tutorials",
-        icon: "tutorial",
+        name: "Vehicle Tracking",
+        icon: "vehicleTracking",
+        path: "vehicletracking",
       },
     ],
   },
   {
-    name: "Settings",
+    name: "Driver Management",
+  },
+  {
+    name: "User Management",
+  },
+  {
+    name: "Maintenance",
     lists: [
       {
-        name: "Company Information",
-        icon: "company",
+        name: "Duty Of Care",
+        icon: "dutyOfCare",
       },
       {
-        name: "Templates",
-        icon: "template",
+        name: "Services/MOT",
+        icon: "servicesMOT",
       },
       {
-        name: "Settings",
-        icon: "settings",
+        name: "Tyres",
+        icon: "tyres",
       },
     ],
   },
   {
-    name: "Account & Billing",
+    name: "Support/Help",
+  },
+  {
+    name: "Reports",
+  },
+  {
+    name: "ReporAlerts/Notificationts",
+  },
+  {
+    name: "Other services",
     lists: [
       {
-        name: "Account & Billing",
-        icon: "acountbilling",
+        name: "Insurance",
+        icon: "insurance",
+      },
+      {
+        name: "Offers",
+        icon: "offers",
+      },
+      {
+        name: "Tyres",
+        icon: "tyres",
       },
     ],
+  },
+  {
+    name: "Logout",
   },
 ];
 
 console.log(sidebar);
 
 export default function Sidebar({ showSidebar, toggleSidebar }) {
+  const [openStates, setOpenStates] = useState({});
+
+  const handleSublistToggle = (index) => {
+    setOpenStates((prevOpenStates) => ({
+      [index]: !prevOpenStates[index],
+    }));
+    console.log(openStates[index]);
+  };
+
   return (
     <div
-      className={`fixed top-0  md:sticky md:block w-[20rem] md:w-1/5 h-screen bg-red ${
+      className={`fixed top-0 md:sticky md:block w-[20rem] md:w-1/5 h-screen bg-red ${
         showSidebar ? "translate-x-0" : "-translate-x-full"
       } transition-transform ease-in-out duration-300 z-50 overflow-y-auto`}
     >
@@ -114,34 +142,40 @@ export default function Sidebar({ showSidebar, toggleSidebar }) {
         <img className="m-3 my-6 lg:m-6 w-4/5 lg:w-3/5" src={Logo} alt="logo" />
       </Link>
       <ul className="text-white m-5 py-5 lg:m-6">
-        <li className="flex items-center hover:bg-orange py-3 px-2 cursor-pointer rounded">
-          {/* <img src={mycard} alt="card" className="me-3" /> */}
-          My Card
-        </li>
-        <li>
-          {sidebar.map((list, index) => (
-            <>
-              <p key={index} className="-ms-2 mt-3 text-sm font-extralight">
-                {list.name}
-              </p>
-              <ul>
-                {list.lists.map((item, itemIndex) => (
-                  <li
-                    key={itemIndex}
-                    className="flex items-center hover:bg-orange py-3 px-2 cursor-pointer rounded"
-                  >
-                    {/* <img
-                      src={icons[item.icon]}
-                      alt={item.name}
-                      className="me-3"
-                    /> */}
-                    {item.name}
-                  </li>
-                ))}
-              </ul>
-            </>
-          ))}
-        </li>
+        {sidebar.map((item, index) =>
+          item.path ? (
+            <NavLink to={item.path} className="relative" key={index}>
+              <li
+                onClick={() => handleSublistToggle(index)}
+                className={`flex items-center font-medium text-xl py-3 px-2 cursor-pointer rounded `}
+              >
+                <div
+                  className={`absolute -left-10 bg-white w-10 h-10 rounded-e-[40%] ${
+                    openStates[index] ? "translate-x-0" : "-translate-x-full"
+                  } transition-transform ease-in-out duration-300`}
+                ></div>
+                <img src={dashboard} alt="card" className="me-3 w-4" />
+                {item.name}
+              </li>
+            </NavLink>
+          ) : (
+            <div className="relative" key={index}>
+              <li
+                onClick={() => handleSublistToggle(index)}
+                className={`flex items-center font-medium text-xl py-3 px-2 cursor-pointer rounded `}
+              >
+                <div
+                  className={`absolute -left-10 bg-white w-10 h-10 rounded-e-[40%] ${
+                    openStates[index] ? "translate-x-0" : "-translate-x-full"
+                  } transition-transform ease-in-out duration-300`}
+                ></div>
+                <img src={dashboard} alt="card" className="me-3 w-4" />
+                {item.name}
+              </li>
+              {openStates[index] && <OpenSubList item={item.lists} />}
+            </div>
+          )
+        )}
       </ul>
     </div>
   );

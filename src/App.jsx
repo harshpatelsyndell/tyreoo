@@ -1,8 +1,9 @@
 import "./App.css";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Main from "./components/Main";
 
 function App() {
   return (
@@ -11,7 +12,12 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<Login />} /> */}
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route index element={<Navigate replace to={"main"} />} />
+            <Route path="main" element={<Main />} />
+            {/* <Route path="users" element={<Users />} />
+            <Route path="analytics" element={<Analytics />} /> */}
+          </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </HashRouter>

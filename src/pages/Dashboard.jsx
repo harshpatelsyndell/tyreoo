@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import Sidebar from "../components/Sidebar";
+import { Outlet } from "react-router-dom";
 
 export default function Dashboard() {
   const [showSidebar, setShowSidebar] = useState(window.innerWidth > 768);
@@ -36,6 +37,7 @@ export default function Dashboard() {
           logo={false}
           menubtn={true}
         />
+        <Outlet />
       </div>
     </div>
   );
