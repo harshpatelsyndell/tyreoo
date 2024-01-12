@@ -17,3 +17,7 @@ design page
 
 task given
 ![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/984968fa-1351-43f2-966f-16092229b15a)
+
+task given
+![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/180f0427-4c46-4d9e-8b9a-a07fa18064ec)
+
