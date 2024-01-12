@@ -1,5 +1,6 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 // import React from 'react'
 
 const profileIcon = (
@@ -117,9 +118,11 @@ export default function Login() {
             </div>
             {/* --------------------------------------------------------- */}
             <div>
-              <button className="text-white bg-black p-2 px-8 rounded hover:bg-gray-800">
-                Login
-              </button>
+              <Link to="/dashboard">
+                <button className="text-white bg-black p-2 px-8 rounded hover:bg-gray-800">
+                  Login
+                </button>
+              </Link>
             </div>
           </div>
         </div>
