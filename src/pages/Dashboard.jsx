@@ -30,7 +30,7 @@ export default function Dashboard() {
     <div className="flex justify-start">
       <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
       {/* ---------------- */}
-      <div className="w-full md:w-4/5">
+      <div className="w-full md:w-4/6 lg:w-4/5">
         <Navigation
           toggleSidebar={toggleSidebar}
           searchBar={true}

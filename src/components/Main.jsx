@@ -1,7 +1,7 @@
 import totalVehicleGraph from "../assets/totalVehicleGraph.png";
 import myfleet from "../assets/myfleet.png";
 
-import { TableData } from "./TableData";
+import TableData from "./TableData";
 
 const vehicleTotalCountData = [
   {
@@ -26,26 +26,26 @@ const vehicleStatus = [
   {
     status: "Active",
     totNum: 3,
-    bg: "statusActiveBg",
-    text: "statusActive",
+    bg: "#D3FBE9",
+    text: "#00CD73",
   },
   {
     status: "Inactive",
     totNum: 1,
-    bg: "statusInactiveBg",
-    text: "statusInactive",
+    bg: "#006ED4",
+    text: "#06067a",
   },
   {
     status: "Idle",
     totNum: 1,
-    bg: "statusIdleBg",
-    text: "statusIdle",
+    bg: "#ED9436",
+    text: "#BC6810",
   },
   {
     status: "Out of Service",
     totNum: 1,
-    bg: "statusOutOfServiceBg",
-    text: "statusOutOfService",
+    bg: "#FF493E",
+    text: "#BB2E25",
   },
 ];
 
@@ -53,26 +53,26 @@ const maintenance = [
   {
     status: "In Service",
     totNum: 1,
-    bg: "statusActiveBg",
-    text: "statusActive",
+    bg: "#D3FBE9",
+    text: "#00CD73",
   },
   {
     status: "Out of Service",
     totNum: 2,
-    bg: "statusOutOfServiceBg",
-    text: "statusOutOfService",
+    bg: "#FF493E",
+    text: "#BB2E25",
   },
   {
     status: "Disposed",
     totNum: 2,
-    bg: "statusIdleBg",
-    text: "statusIdle",
+    bg: "#ED9436",
+    text: "#BC6810",
   },
   {
     status: "Missing",
     totNum: 1,
-    bg: "statusIdleBg",
-    text: "statusIdle",
+    bg: "#ED9436",
+    text: "#BC6810",
   },
 ];
 

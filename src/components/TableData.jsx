@@ -12,7 +12,7 @@ TableData.propTypes = {
   name: PropTypes.string,
 };
 
-export function TableData({ data, name }) {
+export default function TableData({ data, name }) {
   return (
     <div className="grow-0 lg:w-[40%] space-y-4">
       <h1 className="md:text-2xl text-red font-medium">{name}</h1>
@@ -25,9 +25,13 @@ export function TableData({ data, name }) {
             >
               {list.status}{" "}
               <span
-                className={`flex justify-center items-center bg-${list.bg} w-7 h-7 rounded-full`}
+                style={{ backgroundColor: list.bg }}
+                className="flex justify-center items-center w-7 h-7 rounded-full"
               >
-                <p className={`text-base font-medium text-${list.text}`}>
+                <p
+                  style={{ color: list.text }}
+                  className="text-base font-medium"
+                >
                   {list.totNum}
                 </p>
               </span>

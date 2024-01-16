@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { NavLink, useLocation } from "react-router-dom";
+import list from "../assets/list.svg";
 
 OpenSubList.propTypes = {
   item: PropTypes.arrayOf(
@@ -21,9 +22,14 @@ export default function OpenSubList({ item }) {
           key={subItemIndex}
           to={subItem.path}
           activeClassName="bg-black"
-          isActive={() => subItem.path === location.pathname}
+          // isActive={() => subItem.path === location.pathname}
         >
-          <li className="flex items-center hover:bg-black py-3 px-2 cursor-pointer rounded-s-2xl">
+          <li
+            className={`flex items-center hover:bg-black py-3 px-2 cursor-pointer rounded-s-2xl ${
+              location.pathname.endsWith(subItem.path) ? "bg-black" : ""
+            }`}
+          >
+            <img src={list} alt="card" className="me-3 w-4" />
             {subItem.name}
           </li>
         </NavLink>

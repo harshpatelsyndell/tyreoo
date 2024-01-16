@@ -56,7 +56,6 @@ const sidebar = [
       {
         name: "Vehicle Tracking",
         icon: "vehicleTracking",
-        path: "vehicletracking",
       },
     ],
   },
@@ -90,7 +89,7 @@ const sidebar = [
     name: "Reports",
   },
   {
-    name: "ReporAlerts/Notificationts",
+    name: "ReporAlerts",
   },
   {
     name: "Other services",
@@ -128,7 +127,7 @@ export default function Sidebar({ showSidebar, toggleSidebar }) {
 
   return (
     <div
-      className={`fixed top-0 md:sticky md:block w-[20rem] lg:w-1/5 h-screen bg-red ${
+      className={`fixed top-0 md:sticky md:block w-[20rem] md:w-2/6 lg:w-1/5   h-screen bg-red ${
         showSidebar ? "translate-x-0" : "-translate-x-full"
       } transition-transform ease-in-out duration-300 z-50 overflow-y-auto font-gotham`}
     >
@@ -162,7 +161,7 @@ export default function Sidebar({ showSidebar, toggleSidebar }) {
             <div className="relative" key={index}>
               <li
                 onClick={() => handleSublistToggle(index)}
-                className={`flex items-center font-medium text-xl py-3 px-2 cursor-pointer rounded `}
+                className={`flex items-center font-medium text-xl py-3 px-2 cursor-pointer rounded`}
               >
                 <div
                   className={`absolute -left-10 bg-white w-10 h-10 rounded-e-[40%] ${
@@ -172,7 +171,9 @@ export default function Sidebar({ showSidebar, toggleSidebar }) {
                 <img src={dashboard} alt="card" className="me-3 w-4" />
                 {item.name}
               </li>
-              {openStates[index] && <OpenSubList item={item.lists} />}
+              {openStates[index] && (
+                <OpenSubList toggleSidebar={toggleSidebar} item={item.lists} />
+              )}
             </div>
           )
         )}
