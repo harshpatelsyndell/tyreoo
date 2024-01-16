@@ -16,7 +16,10 @@ design page
 ![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/3b2d49ea-c799-49c6-90b9-bad42546d660)
 
 task given
-![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/984968fa-1351-43f2-966f-16092229b15a)
+![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/984968fa-1351-43f2-966f-16092229b15a)    
+
+design page
+![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/b53e05c0-0993-46e5-815d-28415e9fab16)      
 
 task given
 ![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/180f0427-4c46-4d9e-8b9a-a07fa18064ec)
