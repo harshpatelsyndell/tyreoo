@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import React from 'react'
 
 const profileIcon = (
@@ -71,9 +71,14 @@ const hidePassIcon = (
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  const handleLogin = () => {
+    navigate("/dashboard");
   };
   return (
     <div className="flex sm:items-center justify-center h-screen bg-grey">
@@ -119,7 +124,10 @@ export default function Login() {
             {/* --------------------------------------------------------- */}
             <div>
               <Link to="/dashboard">
-                <button className="text-white bg-black p-2 px-8 rounded hover:bg-gray-800">
+                <button
+                  onClick={handleLogin}
+                  className="text-white bg-black p-2 px-8 rounded hover:bg-gray-800"
+                >
                   Login
                 </button>
               </Link>

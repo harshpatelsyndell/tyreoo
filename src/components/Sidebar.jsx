@@ -110,6 +110,7 @@ const sidebar = [
   },
   {
     name: "Logout",
+    path: "/login",
   },
 ];
 
