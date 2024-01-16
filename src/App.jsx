@@ -15,8 +15,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}>
             <Route index element={<Navigate replace to={"main"} />} />
             <Route path="main" element={<Main />} />
-            {/* <Route path="users" element={<Users />} />
-            <Route path="analytics" element={<Analytics />} /> */}
+            <Route path="vehiclelist" element={<Vehiclelist />} />
+            {/* <Route path="analytics" element={<Analytics />} /> */}
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
@@ -26,3 +26,7 @@ function App() {
 }
 
 export default App;
+
+function Vehiclelist() {
+  return <div>Vehiclelist</div>;
+}

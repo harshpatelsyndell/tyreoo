@@ -128,7 +128,7 @@ export default function Sidebar({ showSidebar, toggleSidebar }) {
 
   return (
     <div
-      className={`fixed top-0 md:sticky md:block w-[20rem] md:w-1/5 h-screen bg-red ${
+      className={`fixed top-0 md:sticky md:block w-[20rem] lg:w-1/5 h-screen bg-red ${
         showSidebar ? "translate-x-0" : "-translate-x-full"
       } transition-transform ease-in-out duration-300 z-50 overflow-y-auto font-gotham`}
     >
