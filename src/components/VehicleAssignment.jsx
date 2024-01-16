@@ -2,6 +2,7 @@ import tableProfile from "../assets/tableProfile.png";
 import cloud from "../assets/cloud.svg";
 import { useState } from "react";
 import vehicleAssignmentData from "./../VehicleData";
+import Pagination from "./Pagination";
 const search = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -172,28 +173,13 @@ export default function VehicleAssignment() {
         </table>
       </div>
       {/* // -----pagination sec----- */}
-      <div className="font-gotham">
-        <div className="flex gap-2 m-5 justify-end">
-          <p className="text-medium text-greyPagination text-lg">
-            {startIndex + 1}-{Math.min(endIndex, filteredData.length)} of{" "}
-            {filteredData.length}
-          </p>
-          <button
-            className="border-[1px] w-8 border-greyPagination text-greyPagination rounded"
-            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-          >
-            &lt;
-          </button>
-          <button
-            className="border-[1px] w-8 border-greyPagination text-greyPagination rounded"
-            onClick={() =>
-              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-            }
-          >
-            &gt;
-          </button>
-        </div>
-      </div>
+      <Pagination
+        totalPages={totalPages}
+        setCurrentPage={setCurrentPage}
+        startIndex={startIndex}
+        endIndex={endIndex}
+        totalItems={filteredData.length}
+      />
     </>
   );
 }
