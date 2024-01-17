@@ -26,7 +26,7 @@ export default function AddVDataForm({ isOpen, handleAddForm }) {
           </div>
           {/* --------------end form top sec--------------- */}
           {/* ----------------form sec-------------------- */}
-          <div className="p-3 grid grid-cols-2 gap-5">
+          <div className="p-3 grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label htmlFor="id">ID</label>
               <input
