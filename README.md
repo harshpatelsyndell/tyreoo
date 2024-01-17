@@ -31,4 +31,7 @@ task given
 ![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/4c13f047-c242-4e1c-aba9-499ec01538eb)    
 ![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/dcc16b49-a8de-4eab-b404-233be490d479)
 
+design page   
+![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/66d6a2d7-3a44-49b1-b3b0-9b0976115bcf)    
+![image](https://github.com/harshpatelsyndell/tyreoo/assets/156167722/79c818d0-eaa1-40ea-a5f2-5ede975f3854)
 
