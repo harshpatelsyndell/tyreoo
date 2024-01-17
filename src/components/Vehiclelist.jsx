@@ -44,7 +44,7 @@ export default function Vehiclelist() {
     setAddVehicleForm((isOpen) => !isOpen);
   };
   return (
-    <div className="relative">
+    <div className="relative h-screen">
       <div className="py-5 px-3 sm:py-10 sm:px-10 font-gotham space-y-5">
         <h1 className="text-2xl text-red text-medium">Vehicle List</h1>
         {/* ------- */}
@@ -143,7 +143,7 @@ export default function Vehiclelist() {
         endIndex={endIndex}
         totalItems={filteredData.length}
       />
-      <AddVDataForm isOpen={addVehicleForm} />
+      <AddVDataForm isOpen={addVehicleForm} handleAddForm={handleAddForm} />
     </div>
   );
 }
